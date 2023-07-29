@@ -5,7 +5,7 @@ Line Bot Webhook & Google Apps script & ChatGTP API
 
 Line_Bot_Token = "";
 ChatGPT_Access_Token = "";
-UUID = "U974efcbaa3f4df1caff9b48e04a8d9e0";
+UUID = "";
 
 function doPost(e) {
   var oPostData = JSON.parse(e.postData.contents);    //收到的 LINE Bot 提問 
