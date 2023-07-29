@@ -3,9 +3,9 @@ Author : Jacky   2023/7/10 09:30
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-ChatGPT_Access_Token = "";
-Line_Bot_Token = "";
-UUID = "";
+ChatGPT_Access_Token = "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";
+Line_Bot_Token = "xEnn+q4vzmS5207UHp6Qyx5s5bj6p6VgZwEqzrRYIRpsOUOYDEG+lx10EBrwfemY/Kbi3eMbwZIFAVQnti7atq4ScZy/wb86LLZ+ZSZAviyIT3ZovggHR+aOWvbMBqMlqYvgy81op+kLDxFv3OKx+wdB04t89/1O/w1cDnyilFU=";
+UUID = "U974efcbaa3f4df1caff9b48e04a8d9e0";
 
 function doPost(e) {
   var oPostData = JSON.parse(e.postData.contents);    //收到的 LINE Bot 提問 
