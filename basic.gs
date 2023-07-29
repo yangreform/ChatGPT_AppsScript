@@ -3,8 +3,8 @@ Author : Jacky   2023/7/10 09:30
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-Line_Bot_Token = "";
 ChatGPT_Access_Token = "";
+Line_Bot_Token = "";
 UUID = "";
 
 function doPost(e) {
