@@ -4,9 +4,8 @@ Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
 Line_Bot_Token = "";
-Line_Bot_API_reply = "https://api.line.me/v2/bot/message/reply";
-
 ChatGPT_Access_Token = "";
+UUID = "U974efcbaa3f4df1caff9b48e04a8d9e0";
 
 function doPost(e) {
   var oPostData = JSON.parse(e.postData.contents);    //收到的 LINE Bot 提問 
@@ -63,6 +62,6 @@ function replyLineBotMessage(sMsg, sReplyToken){
       },
       'payload': JSON.stringify(linePayload)
     };
-    
+    Line_Bot_API_reply = "https://api.line.me/v2/bot/message/reply";
     UrlFetchApp.fetch(Line_Bot_API_reply, lineOptions);  // 把訊息送出
 }
