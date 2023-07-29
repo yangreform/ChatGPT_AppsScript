@@ -1,16 +1,19 @@
 /*
-Author : Jacky   2023/7/10 09:30
+Author : Jacky   2023/7/29 09:30
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-ChatGPT_Access_Token = "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";
-Line_Bot_Token = "xEnn+q4vzmS5207UHp6Qyx5s5bj6p6VgZwEqzrRYIRpsOUOYDEG+lx10EBrwfemY/Kbi3eMbwZIFAVQnti7atq4ScZy/wb86LLZ+ZSZAviyIT3ZovggHR+aOWvbMBqMlqYvgy81op+kLDxFv3OKx+wdB04t89/1O/w1cDnyilFU=";
-UUID = "U974efcbaa3f4df1caff9b48e04a8d9e0";
+ChatGPT_Access_Token = "";
+Line_Bot_Token = ""; 
+UUID = "";
 
 function doPost(e) {
   var oPostData = JSON.parse(e.postData.contents);    //收到的 LINE Bot 提問 
   var sReplyToken = oPostData.events[0].replyToken
   var sUserMsgText = oPostData.events[0].message.text   //  sUserMsgText 就是收到的文字內容
+
+  //要傳給 ChatGPT 的字，後面加上 "一段訊息結束的標記符號"
+  sUserMsgText = sUserMsgText + "###" 
 
   // 呼叫ChatGPT API
   sGPTReceive = chatGPT_api(sUserMsgText)
@@ -32,7 +35,7 @@ function chatGPT_api(sMsg) {
       "model": "text-davinci-003",
       "prompt": sMsg,
       "temperature": 0,
-      "max_tokens": 300,
+      "max_tokens": 500,
       "top_p": 1,
       "frequency_penalty": 0,
       "presence_penalty": 0.6,
