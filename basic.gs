@@ -24,7 +24,7 @@ function doPost(e) {
 }
 
 // 呼叫ChatGPT API
-function chatGPT_api(sMsg) {
+function chatGPT_api(sUserMsgText) {
   return UrlFetchApp.fetch('https://api.openai.com/v1/completions', {
     'method': 'post',
     'headers': {
@@ -33,7 +33,7 @@ function chatGPT_api(sMsg) {
     },
     'payload': JSON.stringify({
       "model": "text-davinci-003",
-      "prompt": sMsg,
+      "prompt": sUserMsgText,
       "temperature": 0,
       "max_tokens": 500,
       "top_p": 1,
@@ -45,14 +45,14 @@ function chatGPT_api(sMsg) {
 }
 
 // 將收到的 chatGPT 回應，傳給 LINE bot
-function replyLineBotMessage(sMsg, sReplyToken){
+function replyLineBotMessage(sResponse, sReplyToken){
       
     var linePayload = {
       'replyToken': sReplyToken,
       'messages': [
         {
           'type': 'text',
-          'text': sMsg
+          'text': sResponse
         }
       ]
     };
