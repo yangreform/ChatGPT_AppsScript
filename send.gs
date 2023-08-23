@@ -1,11 +1,10 @@
 /*
-Author : Jacky   2023/7/29 09:30
+Author : Jacky   2023/8/23 09:30
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
 ChatGPT_Access_Token = "";
 Line_Bot_Token = "";
-UUID = "";
 
 // reply "sMsg" to LINE
 function pushLineBotMessage(sMsg){
@@ -37,11 +36,12 @@ function send() {
   var sUserMsgText = "tell me a joke.";
 
   // 呼叫ChatGPT API
-  sGPTReceive = chatGPT_api(sUserMsgText)
+  //sGPTReceive = chatGPT_api(sUserMsgText)
   // 將收到的 chatGPT 回應 sGPTReceive，傳給 LINE bot
-  sResponse = JSON.parse(sGPTReceive.getContentText())["choices"][0]["text"]
+  //sResponse = JSON.parse(sGPTReceive.getContentText())["choices"][0]["text"]
   
-  //sResponse = "test";   //debug用
+  sResponse = "test";   //debug用
   console.log( sResponse )
   pushLineBotMessage(sResponse);
+  sheet( sUserMsgText, sResponse )
 }
