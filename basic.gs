@@ -1,11 +1,10 @@
 /*
-Author : Jacky   2023/7/10 09:30
+Author : Jacky   2023/8/23 09:30
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-ChatGPT_Access_Token = "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";
-Line_Bot_Token = "xEnn+q4vzmS5207UHp6Qyx5s5bj6p6VgZwEqzrRYIRpsOUOYDEG+lx10EBrwfemY/Kbi3eMbwZIFAVQnti7atq4ScZy/wb86LLZ+ZSZAviyIT3ZovggHR+aOWvbMBqMlqYvgy81op+kLDxFv3OKx+wdB04t89/1O/w1cDnyilFU="; 
-UUID = "U974efcbaa3f4df1caff9b48e04a8d9e0";
+ChatGPT_Access_Token = "";
+Line_Bot_Token = "";
 
 /*preword = "你現在是台灣新竹地方法院所屬的民間公證人的林威伶律師" +
 "事務所網頁：   https://weishun.cc " +
