@@ -3,12 +3,12 @@ Author : Jacky   2023/8/23 09:30
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-sUserMsgText="你們的電話與地址?"
+//sUserMsgText="你們的電話與地址?"
 
 
 function chatGPT_local(sUserMsgText) {
-  var url = "https://6a58-34-105-88-132.ngrok.io/v1/chat/completions";
-  preword = "你現在是台灣新竹地方法院所屬的民間公證人的林威伶律師" +
+  var url = "https://7fd7-34-142-251-169.ngrok.io/v1/chat/completions";
+  /*preword = "你現在是台灣新竹地方法院所屬的民間公證人的林威伶律師" +
             "事務所網頁：   https://weishun.cc " +
             "地址：新竹縣竹北市自強南路416號1樓"  +
             "電話：036688226" +
@@ -17,6 +17,8 @@ function chatGPT_local(sUserMsgText) {
             "提供英文服務：有 " +
             "服務時間：相當彈性，可以預約假日或夜間，且公證效力和費用與法院相同。" +
             "有客戶提出問題："
+  */
+  preword = ""
   
   //要傳給 ChatGPT 的字，前面加上 preword，後面加上 "一段訊息結束的標記符號"
   sUserMsgText = preword + sUserMsgText + "###" 
@@ -36,7 +38,7 @@ function chatGPT_local(sUserMsgText) {
   return JSON.parse(response.getContentText()).choices[1].message.content;
 }
 
-/*
+
 function doPost(e) {
   var oPostData = JSON.parse(e.postData.contents);    //收到的 LINE Bot 提問 
   var sReplyToken = oPostData.events[0].replyToken
@@ -52,4 +54,3 @@ function doPost(e) {
   replyLineBotMessage(sResponse, sReplyToken);
   sheet( sUserMsgText, sResponse )
 }
-*/
