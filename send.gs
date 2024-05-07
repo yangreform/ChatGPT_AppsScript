@@ -1,14 +1,13 @@
 /*
-Author : Jacky   2023/8/23 09:30
+Author : Jacky   2024/5/7
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-ChatGPT_Access_Token = "";
-Line_Bot_Token = "";
+ChatGPT_Access_Token = "";      //輸入自己的 Token
+Line_Bot_Token = "";                  //輸入自己的 Token
 
-// reply "sMsg" to LINE
+// 將 "sMsg" 主動 LINE 給你手機
 function pushLineBotMessage(sMsg){
-      
     var linePayload = {
       'to':UUID,
       'messages': [
@@ -28,10 +27,10 @@ function pushLineBotMessage(sMsg){
       'payload': JSON.stringify(linePayload)
     };
     Line_Bot_API_push = "https://api.line.me/v2/bot/message/push";
-    UrlFetchApp.fetch(Line_Bot_API_push, lineOptions);  // 把訊息送出
+    UrlFetchApp.fetch(Line_Bot_API_push, lineOptions);         // 把訊息送出給 LINE 伺服器
 }
     
-
+// 將 "sMsg" 回應到 LINE
 function send() {
   var sUserMsgText = "tell me a joke.";
 
@@ -40,8 +39,8 @@ function send() {
   // 將收到的 chatGPT 回應 sGPTReceive，傳給 LINE bot
   //sResponse = JSON.parse(sGPTReceive.getContentText())["choices"][0]["text"]
   
-  sResponse = "test";   //debug用
-  console.log( sResponse )
-  pushLineBotMessage(sResponse);
-  sheet( sUserMsgText, sResponse )
+  sResponse = "test";                            //debug用
+  console.log( sResponse )                   //在瑩幕上顯示
+  pushLineBotMessage(sResponse);    // 將 "sMsg" 主動 LINE 給你手機
+  sheet( sUserMsgText, sResponse )    // 把 "sMsg" 記錄到 google 雲端硬碟
 }
