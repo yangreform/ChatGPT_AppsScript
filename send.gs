@@ -35,12 +35,10 @@ function send() {
   var sUserMsgText = "tell me a joke.";
 
   // 呼叫ChatGPT API
-  //sGPTReceive = chatGPT_api(sUserMsgText)
-  // 將收到的 chatGPT 回應 sGPTReceive，傳給 LINE bot
-  //sResponse = JSON.parse(sGPTReceive.getContentText())["choices"][0]["text"]
+  //sResponse = chatGPT_api(sUserMsgText)
   
-  sResponse = "test";                            //debug用
+  sResponse = "test";                         //debug用
   console.log( sResponse )                   //在瑩幕上顯示
-  pushLineBotMessage(sResponse);    // 將 "sMsg" 主動 LINE 給你手機
-  sheet( sUserMsgText, sResponse )    // 把 "sMsg" 記錄到 google 雲端硬碟
+  pushLineBotMessage(sResponse);             // 將 "sMsg" 主動 LINE 給你手機
+  sheet( sUserMsgText, sResponse )           // 把 "sMsg" 記錄到 google 雲端硬碟
 }
