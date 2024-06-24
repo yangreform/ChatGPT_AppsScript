@@ -42,7 +42,7 @@ function chatGPT_api(sUserMsgText) {
 
 
 function doPost(e) {
-  var oPostData = JSON.parse(e.postData.contents);            //收到的 LINE Bot 提問 
+  var oPostData = JSON.parse(e.postData.contents);            // 收到的 LINE Bot 提問 
   var sReplyToken = oPostData.events[0].replyToken
   var sUserMsgText = oPostData.events[0].message.text         //  sUserMsgText 就是ChatGPT回傳的文字內容
 
@@ -53,8 +53,8 @@ function doPost(e) {
   sResponse = chatGPT_api(sUserMsgText_with_preword)
 
   // 將收到的 chatGPT 回應，傳給 LINE bot
-  replyLineBotMessage(sResponse, sReplyToken);
-  sheet( sUserMsgText, sResponse )
+  replyLineBotMessage(sResponse, sReplyToken);                // 將 "sMsg" 被動 LINE 給你手機
+  sheet( sUserMsgText, sResponse )                            // 把 "sMsg" 記錄到 google 雲端硬碟
 }
 
 
