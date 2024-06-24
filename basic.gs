@@ -4,8 +4,8 @@ Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
 ChatGPT_Access_Token = "";
-Line_Bot_Token = "";
 UUID = "";
+Line_Bot_Token = "";
 preword = ""                           //將會加在每段要傳給 ChatGPT 的字，前面加上 preword
 
 
@@ -47,10 +47,10 @@ function doPost(e) {
   var sUserMsgText = oPostData.events[0].message.text         //  sUserMsgText 就是ChatGPT回傳的文字內容
 
   //將會加在每段要傳給 ChatGPT 的字，前面加上 preword，後面加上 "一段訊息結束的標記符號"
-  sUserMsgText = preword + sUserMsgText + "###" 
+  sUserMsgText_with_preword = preword + sUserMsgText + "###" 
 
   // 呼叫ChatGPT API
-  sResponse = chatGPT_api(sUserMsgText)
+  sResponse = chatGPT_api(sUserMsgText_with_preword)
 
   // 將收到的 chatGPT 回應，傳給 LINE bot
   replyLineBotMessage(sResponse, sReplyToken);
