@@ -26,7 +26,7 @@ function chatGPT_api(sUserMsgText) {
           "content": sUserMsgText
           }
         ],
-      "temperature": 0,
+      "temperature": 1,
       "max_tokens": 500,
       "top_p": 1,
       "frequency_penalty": 0,
