@@ -1,14 +1,11 @@
 /*
-Author : Jacky   2024/6/3
+Author : Jacky   2025/5/20
 Line Bot Webhook & Google Apps script & ChatGTP API
 */
 
-ChatGPT_Access_Token = "";
-UUID = "";
-Line_Bot_Token = "";
-preword = ""                           //將會加在每段要傳給 ChatGPT 的字，前面加上 preword
-
-
+var ChatGPT_Access_Token = "";  // OpenAI API 金鑰
+var Line_Bot_Token = "";        // LINE Bot 的金鑰
+var preword = "";               // 傳給 GPT 前綴詞（選填）
 
 // 呼叫ChatGPT API
 function chatGPT_api(sUserMsgText) {
